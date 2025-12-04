@@ -1,0 +1,162 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: #000000;
+  background-color: #ffffff;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --button-bg-color: #f77b92;
+  --button-bg-hover: #ff3b50;
+  --button-text-color: #ffffff;
+}
+
+/* Ссылки */
+a {
+  font-weight: 500;
+  color: #000;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #f77b92;
+}
+
+/* Основной body */
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Заголовки */
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+  color: #000000;
+}
+
+/* Основной контейнер */
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Универсальные карточки */
+.card {
+  padding: 2em;
+  border-radius: 12px;
+  background-color: #f0f0f0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* Универсальные кнопки */
+button {
+  border-radius: 12px;
+  border: none;
+  padding: 1em 2em;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: inherit;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button:hover,
+button:active {
+  background-color: var(--button-bg-hover);
+  transform: translateY(-3px);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+/* Главная страница: кнопки с иконками */
+.home-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 2rem;
+}
+
+.section-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background-color: var(--button-bg-color);
+  color: var(--button-text-color);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.section-button:hover,
+.section-button:active {
+  background-color: var(--button-bg-hover);
+  transform: translateY(-5px);
+}
+
+.section-button .emoji {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #242424;
+    color: #ffffff;
+  }
+
+  .card {
+    background-color: #1f1f1f;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+
+  button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+  }
+
+  .section-button {
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+  }
+
+  .section-button:hover,
+  .section-button:active {
+    background-color: var(--button-bg-hover);
+  }
+}

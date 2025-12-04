@@ -1,0 +1,143 @@
+
+.crypto-page {
+    background: #121212;
+    color: #f2f2f2;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px;
+}
+
+.crypto-page h1 {
+    font-size: 2.5rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 100;
+    color: #f2f2f2;
+    text-shadow:
+        0 0 2px #fff,
+        0 0 8px #fff;
+}
+
+.converter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+input,
+select {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #333;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    font-weight: 100;
+    background: #1e1e1e;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.1);
+}
+
+input:hover,
+select:hover,
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+button,
+a.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 180px;
+    font-size: 1.2rem;
+    background: #2e2e2e;
+    color: #f2f2f2;
+    border: 1px solid #444;
+    padding: 10px 24px;
+    border-radius: 12px;
+    font-weight: 100;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+button:hover,
+a.btn:hover {
+    background: #3d3d3d;
+    border-color: #666;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.result-container {
+    background: #1e1e1e;
+    border-radius: 16px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.15);
+    display: none;
+    transition: box-shadow 0.3s;
+}
+
+.result-container.show {
+    display: block;
+}
+
+.result-container h2 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.small-text {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.swap-container {
+    display: flex;
+    justify-content: center;
+    margin: -20px;
+}
+
+#swapBtn {
+    background: transparent;
+    color: #f2f2f2;
+    font-size: 2rem;
+    cursor: pointer;
+    border: none;
+    box-shadow: none;
+    transition: all 0.3s;
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+}
+
+#swapBtn:hover {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 1);
+}
+
+.converter-form button[type="submit"] {
+    margin-top: 40px;
+}
+
+.action-buttons {
+    text-align: center;
+    margin-top: 24px;
+}
