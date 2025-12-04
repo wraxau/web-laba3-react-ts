@@ -8,7 +8,7 @@ import Main from "./pages/Main";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/web-laba3-react-ts">
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
