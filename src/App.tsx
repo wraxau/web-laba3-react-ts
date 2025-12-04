@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Weather from "./pages/Weather";
 import Dogs from "./pages/Dogs";
@@ -8,7 +8,7 @@ import Main from "./pages/Main";
 
 export default function App() {
   return (
-    <BrowserRouter basename="/web-laba3-react-ts">
+    <HashRouter>
       <Header />
       <Routes>
         <Route path="/" element={<Main />} />
@@ -17,6 +17,6 @@ export default function App() {
         <Route path="/crypto" element={<Crypto />} />
         <Route path="/new" element={<New />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
