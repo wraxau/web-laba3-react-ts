@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"; 
 import "../styles/style.css"; 
 import "../styles/main.css";
 
@@ -10,10 +11,10 @@ interface SectionButtonProps {
 
 const SectionButton: React.FC<SectionButtonProps> = ({ emoji, label, link }) => {
   return (
-    <a href={link} className="section-button">
+    <Link to={link} className="section-button"> 
       <span className="emoji">{emoji}</span>
       <span className="label">{label}</span>
-    </a>
+    </Link>
   );
 };
 
