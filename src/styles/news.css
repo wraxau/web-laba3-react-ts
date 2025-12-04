@@ -1,3 +1,8 @@
+.meta-data a {
+    font-weight: 500;
+    color: -webkit-link;
+    text-decoration: underline;
+  }
 
 .new-form {
     display: flex;
@@ -5,7 +10,8 @@
     margin-bottom: 24px;
     width: 100%;
   }
-#newInput {
+.new-input {
+    color:black;
     padding: 12px 20px;
     border: 1px solid #ddd;
     border-radius: 15px;
@@ -13,9 +19,16 @@
     font-size: medium;
     outline: none;
     transition: border-color 0.5s;
+    background-color: #ffffff;
+    text-transform: none !important;
+    font-weight: 0 !important;
 }
-#newInput:focus {
+.new-input:focus {
     border-color: #e092eb;
+}
+.new-input::placeholder {       
+    opacity: 1;   
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif; 
 }
 .new-header {
     text-align: center;

@@ -17,6 +17,13 @@
   --button-text-color: #ffffff;
 }
 
+.nav {
+  display: flex;
+  justify-content: center; 
+  gap: 100px;              
+  list-style: none;
+}
+
 /* Ссылки */
 a {
   font-weight: 500;
@@ -36,7 +43,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: #ffffff;
-  color: #000000;
+  color: #000000; 
 }
 
 /* Заголовки */
@@ -80,10 +87,8 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-button:hover,
-button:active {
-  background-color: var(--button-bg-hover);
-  transform: translateY(-3px);
+button:hover {
+  border-color: #e86b79;
 }
 button:focus,
 button:focus-visible {

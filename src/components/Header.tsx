@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-
+import "../styles/style.css";
 export default function Header() {
   return (
-    <header style={{ padding: 20, backgroundColor: "#f0f0f0" }}>
-      <nav style={{ display: "flex", gap: 10 }}>
+    <header className="header">
+      <nav className="nav">
         <Link to="/">Главная</Link>
         <Link to="/weather">Погода</Link>
         <Link to="/dogs">Собаки</Link>
