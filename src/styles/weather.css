@@ -1,8 +1,13 @@
+/* Основной контейнер страницы */
 .weather-page {
   max-width: 900px;
   margin: 0 auto;
   padding: 20px;
+  background: #f2f2f2; 
+  color: #333;
+  font-family: 'Arial', sans-serif;
 }
+
 .weather-header {
   text-align: center;
   margin-bottom: 32px;
@@ -11,6 +16,7 @@
 .weather-header h1 {
   font-size: 2.6rem;
   margin-bottom: 10px;
+  color: #db3450; 
 }
 
 .search-form {
@@ -28,11 +34,13 @@
   border-radius: 12px;
   font-size: 1.1rem;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.2s, background 0.2s;
+  background: #fff;
 }
 
 #cityInput:focus {
   border-color: #db3447;
+  background: #fffbea;
 }
 
 .search-form button {
@@ -51,11 +59,12 @@
   transform: translateY(-2px);
 }
 
+/* Блок с результатами */
 .result-container {
-  background: #7a7a7a;
+  background: #ffffff; 
   border-radius: 16px;
   padding: 32px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
   max-width: 600px;
   width: 100%;
   margin: 0 auto 40px auto;
@@ -82,18 +91,19 @@
 }
 
 .result-item label {
-  color: #8d7f7f;
+  color: #555;
 }
 
 .result-item span {
   font-weight: 600;
-  color: #000;
+  color: #222;
 }
 
 .weather-icon-large {
   font-size: 3.5rem;
   display: block;
   margin: 0 auto 12px auto;
+  color: #ff6b6b;
 }
 
 .tech-details {
@@ -110,6 +120,7 @@
   color: #db3450;
 }
 
+/* Кнопки действий */
 .action-buttons {
   display: flex;
   gap: 12px;
