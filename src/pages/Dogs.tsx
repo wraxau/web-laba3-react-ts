@@ -20,7 +20,6 @@ export default function Dogs() {
       setLoadedMessage(false);
       setImage(null);
 
-      // Искусственная задержка для демонстрации загрузки (можно убрать)
       await new Promise(resolve => setTimeout(resolve, 500));
 
       const res = await fetch("https://dog.ceo/api/breeds/image/random");
