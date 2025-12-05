@@ -116,18 +116,26 @@ export default function Crypto() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    convert();
-  }
+      convert();
+    }
+    return (
+  <div className="crypto-page">
 
-  return (
-    <div style={{ padding: 20 }}>
-      <h1>Конвертация криптовалют</h1>
+    <header>
+      <h1><span className="emoji">💱</span> Крипто-конвертер</h1>
+    </header>
 
-      <form onSubmit={handleSubmit}>
+    <main>
+      <form onSubmit={handleSubmit} className="converter-form">
 
-        {/* Блок выбора направлений и значений */}
-        <div style={{ display: "flex", gap: 20, marginBottom: 20 }}>
-          
+        <div className="input-group">
+          <input
+            type="number"
+            placeholder="Введите сумму"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+          />
+
           <select
             value={leftValue}
             onChange={(e) => setLeftValue(e.target.value)}
@@ -136,14 +144,21 @@ export default function Crypto() {
               <option key={o.value} value={o.value}>{o.text}</option>
             ))}
           </select>
+        </div>
 
-          <button
-            type="button"
-            onClick={swap}
-            style={{ padding: "4px 10px" }}
-          >
-            ⇄
+        <div className="swap-container">
+          <button type="button" id="swapBtn" onClick={swap}>
+            ⇅
           </button>
+        </div>
+
+        <div className="input-group">
+          <input
+            type="text"
+            readOnly
+            placeholder={placeholder}
+            value={result}
+          />
 
           <select
             value={rightValue}
@@ -155,37 +170,11 @@ export default function Crypto() {
           </select>
         </div>
 
-        {/* Поле ввода суммы */}
-        <input
-          type="number"
-          placeholder="Введите сумму"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-          style={{
-            padding: 8,
-            width: 200,
-            marginRight: 10
-          }}
-        />
-
-        {/* Поле результата */}
-        <input
-          type="text"
-          readOnly
-          placeholder={placeholder}
-          value={result}
-          style={{
-            padding: 8,
-            width: 200,
-            marginLeft: 10
-          }}
-        />
-
-        <div style={{ marginTop: 20 }}>
-          <button type="submit">Конвертировать</button>
-        </div>
-
+        <button type="submit">Конвертировать</button>
       </form>
-    </div>
-  );
+
+    </main>
+  </div>
+);
+
 }

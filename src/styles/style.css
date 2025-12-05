@@ -1,167 +1,217 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
 
-  color-scheme: light dark;
-  color: #000000;
-  background-color: #ffffff;
+    color-scheme: light dark;
+    color: #000000;
+    background-color: #ffffff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 
-  --button-bg-color: #f77b92;
-  --button-bg-hover: #ff3b50;
-  --button-text-color: #ffffff;
+    --button-bg-color: #f77b92;
+    --button-bg-hover: #ff3b50;
+    --button-text-color: #ffffff;
 }
 
 .nav {
-  display: flex;
-  justify-content: center; 
-  gap: 100px;              
-  list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    list-style: none;
+}
+
+.header {
+    width: 100%;
+    background-color: #fce4ec;
+    padding: 16px 0;
+    margin-bottom: 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+}
+
+.header .nav a {
+    color: #000000;
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 0 16px;
+    text-decoration: none;
+}
+
+.header .nav a:hover {
+    color: #f77b92;
 }
 
 /* Ссылки */
 a {
-  font-weight: 500;
-  color: #000;
-  text-decoration: inherit;
+    font-weight: 500;
+    color: #000;
+    text-decoration: inherit;
 }
+
 a:hover {
-  color: #f77b92;
+    color: #f77b92;
 }
 
 /* Основной body */
 body {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #ffffff;
-  color: #000000; 
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    color: #000000;
+}
+
+.home-container,
+.weather-container,
+.dogs-container,
+.news-container,
+.page-container {
+    background-color: #fce4ec;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 16px;
+    box-sizing: border-box;
 }
 
 /* Заголовки */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-  color: #000000;
+    font-size: 3.2em;
+    line-height: 1.1;
+    color: #000000;
 }
 
 /* Основной контейнер */
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 /* Универсальные карточки */
 .card {
-  padding: 2em;
-  border-radius: 12px;
-  background-color: #f0f0f0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 2em;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* Универсальные кнопки */
 button {
-  border-radius: 12px;
-  border: none;
-  padding: 1em 2em;
-  font-size: 1.2rem;
-  font-weight: 600;
-  font-family: inherit;
-  background-color: var(--button-bg-color);
-  color: var(--button-text-color);
-  cursor: pointer;
-  transition: all 0.3s ease;
+    border-radius: 12px;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: inherit;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 button:hover {
-  border-color: #e86b79;
+    border-color: #e86b79;
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+    outline: 4px auto -webkit-focus-ring-color;
 }
 
 /* Главная страница: кнопки с иконками */
 .home-container {
-  padding: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .buttons-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 20px;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 2rem;
 }
 
 .section-button {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  border-radius: 16px;
-  background-color: var(--button-bg-color);
-  color: var(--button-text-color);
-  font-weight: 600;
-  font-size: 1.2rem;
-  text-decoration: none;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background-color: var(--button-bg-color);
+    color: var(--button-text-color);
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 .section-button:hover,
 .section-button:active {
-  background-color: var(--button-bg-hover);
-  transform: translateY(-5px);
+    background-color: var(--button-bg-hover);
+    transform: translateY(-5px);
 }
 
 .section-button .emoji {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #242424;
-    color: #ffffff;
-  }
+    body {
+        background-color: #242424;
+        color: #ffffff;
+    }
 
-  .card {
-    background-color: #1f1f1f;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
+    .card {
+        background-color: #1f1f1f;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
 
-  button {
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-  }
+    button {
+        background-color: var(--button-bg-color);
+        color: var(--button-text-color);
+    }
 
-  .section-button {
-    background-color: var(--button-bg-color);
-    color: var(--button-text-color);
-  }
+    .section-button {
+        background-color: var(--button-bg-color);
+        color: var(--button-text-color);
+    }
 
-  .section-button:hover,
-  .section-button:active {
-    background-color: var(--button-bg-hover);
-  }
+    .section-button:hover,
+    .section-button:active {
+        background-color: var(--button-bg-hover);
+    }
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px 16px;
+    box-sizing: border-box;
 }

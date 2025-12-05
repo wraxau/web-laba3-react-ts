@@ -12,10 +12,6 @@
   font-weight: 700;
   margin-bottom: 32px;
   color: #1a1a1a;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .dogs-container p {
@@ -61,6 +57,17 @@
   background: linear-gradient(135deg, #a8a8a8 0%, #7a7a7a 100%);
 }
 
+.dog-emoji {
+    font-size: 2.5rem;
+}
+
+.dog-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
 /* Result Block */
 .dogs-result {
   background: linear-gradient(145deg, #ffffff, #f8f9fa);
@@ -79,6 +86,14 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  max-width: 1000px;
+}
+
+.dogs-result {
+    max-width: 1000px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .dogs-result::before {

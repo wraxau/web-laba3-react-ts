@@ -1,4 +1,3 @@
-
 .crypto-page {
     background: #121212;
     color: #f2f2f2;
@@ -8,10 +7,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 40px 16px;
+    padding: 100px 16px 40px 16px;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .crypto-page h1 {
+    margin-top: 0;
     font-size: 2.5rem;
     letter-spacing: 1px;
     text-align: center;
@@ -21,6 +23,10 @@
     text-shadow:
         0 0 2px #fff,
         0 0 8px #fff;
+}
+
+.crypto-header {
+    margin-bottom: 0;
 }
 
 .converter-form {
@@ -140,4 +146,25 @@ a.btn:hover {
 .action-buttons {
     text-align: center;
     margin-top: 24px;
+}
+
+.crypto-header {
+    background-color: #121212;
+    padding: 16px 0;
+    box-shadow: none;
+    display: flex;
+    justify-content: center;
+}
+
+.crypto-header .nav a {
+    color: #f2f2f2;
+    font-family: monospace;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin: 0 16px;
+    text-decoration: none;
+}
+
+.crypto-header .nav a:hover {
+    color: #2ecc71;
 }

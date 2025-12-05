@@ -3,94 +3,95 @@
     padding: 0;
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  }
-  
-  body {
-    background: linear-gradient(135deg, #faf5f5 0%, #f9e4e4 100%);
+}
+
+body {
+    background: none;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-  }
-  
-  header {
+    margin: 0;
+}
+
+header {
     text-align: center;
     margin-bottom: 50px;
-  }
-  
-  h1 {
+}
+
+h1 {
     font-size: 2.5rem;
     color: #100c0d;
     margin-bottom: 12px;
-  }
-  
-  .subtitle {
+}
+
+.subtitle {
     color: #8d7f7f;
     font-size: 1.1rem;
-  }
-  
-  .cards {
+}
+
+.cards {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     width: 100%;
     max-width: 1000px;
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .cards {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
     }
-    .buttons-wrapper{
-      grid-template-columns: 1fr;
+
+    .buttons-wrapper {
+        grid-template-columns: 1fr;
     }
-    .news-card{
-      grid-template-columns: 1fr;
+
+    .news-card {
+        grid-template-columns: 1fr;
     }
+
     .nav {
-      gap: 10px; 
-      flex-wrap: wrap; 
-      justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
-  }
+}
 
 
-  
-  .card {
+
+.card {
     background: white;
     border-radius: 16px;
     padding: 24px;
     text-align: center;
     box-shadow: 0 6px 20px #d19a9a14;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
-  }
-  
-  .icon {
+}
+
+.icon {
     font-size: 2.4rem;
     margin-bottom: 16px;
     display: block;
-  }
-  
-  .card h2 {
+}
+
+.card h2 {
     font-size: 1.4rem;
     margin-bottom: 12px;
     color: #3b2222;
-  }
-  
-  .card p {
+}
+
+.card p {
     color: #8d7f7f;
     font-size: 0.95rem;
     margin-bottom: 20px;
     line-height: 1.5;
-  }
-  
-  .btn {
+}
+
+
+.card .btn {
     background: #f77b92;
     color: white;
     border: none;
@@ -101,48 +102,72 @@
     text-decoration: none;
     display: inline-block;
     transition: background 0.2s;
-  }
-  
-  .btn:hover {
-    background: #b92929;
-  }
-  
-  .weather-icon { color: #db344a; }
-  .movies-icon { color: #e74c3c; }
-  .currency-icon { color: #2ecc71; }
-  .books-icon { color: #9b59b6; }
+}
 
-  /* Бегущая строка с именами */
+.card .btn:hover {
+    background: #ff3b50;
+}
+
+.weather-icon {
+    color: #db344a;
+}
+
+.movies-icon {
+    color: #e74c3c;
+}
+
+.currency-icon {
+    color: #2ecc71;
+}
+
+.books-icon {
+    color: #9b59b6;
+}
+
+/* Бегущая строка с именами */
 .credits-marquee {
     position: relative;
     width: 100%;
     overflow: hidden;
     background: rgba(255, 255, 255, 0.7);
-    padding: 12px 0; 
+    padding: 12px 0;
     margin-top: 100px;
     border-top: 1px solid #eee;
-  }
-  
-  .credits-content {
+}
+
+.credits-content {
     display: inline-block;
     white-space: nowrap;
     padding-left: 100%;
     animation: scroll-left 14s linear infinite;
-    font-size: 1.6rem; 
+    font-size: 1.6rem;
     color: #f77b92;
     font-weight: 600;
-  }
-  
-  .credits-marquee:hover .credits-content {
+}
+
+.credits-marquee:hover .credits-content {
     animation-play-state: paused;
-  }
-  
-  @keyframes scroll-left {
+}
+
+@keyframes scroll-left {
     0% {
-      transform: translateX(0);
+        transform: translateX(0);
     }
+
     100% {
-      transform: translateX(-100%);
+        transform: translateX(-100%);
     }
-  }
-  
+}
+
+.welcome-title {
+    color: #f77b92;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+}

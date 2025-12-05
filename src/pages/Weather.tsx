@@ -1,5 +1,5 @@
 import { useState } from "react";
-//import "../styles/style.css";
+import "../styles/style.css";
 import "../styles/weather.css";
 
 interface GeoData {
@@ -37,7 +37,6 @@ export default function Weather() {
       setError(null);
       setWeather(null);
 
-      // 1. Геокодинг
       const geoResponse = await fetch(
         `https://nominatim.openstreetmap.org/search?city=${encodeURIComponent(
           cityName
@@ -52,7 +51,6 @@ export default function Weather() {
 
       const { lat, lon, display_name } = geo[0];
 
-      // 2. Погода
       const weatherResponse = await fetch(
         `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
       );
@@ -74,7 +72,6 @@ export default function Weather() {
         minute: "2-digit",
       });
 
-      // Иконка по температуре
       let icon = "🌤️";
       if (temperature < 0) icon = "❄️";
       else if (temperature < 10) icon = "☁️";
@@ -100,16 +97,15 @@ export default function Weather() {
   function handleSubmit(event: React.FormEvent) {
     event.preventDefault();
     if (!city.trim()) return;
-
     setLastCity(city);
     fetchWeather(city);
   }
 
   return (
-    <div className="weather-container">
-      <h1>Погода</h1>
+    <div className="page-container weather-container">
+      <h1>🌤️ Погода в любом городе</h1>
 
-      <form id="cityForm" onSubmit={handleSubmit}>
+      <form id="cityForm" className="search-form" onSubmit={handleSubmit}>
         <input
           id="cityInput"
           type="text"
@@ -122,9 +118,11 @@ export default function Weather() {
         </button>
       </form>
 
-      <div id="weatherResult" className={`result-block ${weather || loading ? "show" : ""}`}>
+      <div
+        id="weatherResult"
+        className={`result-container ${weather || loading ? "show" : ""}`}
+      >
         {loading && <p>Загрузка погоды...</p>}
-
         {error && <p className="error">{error}</p>}
 
         {weather && (

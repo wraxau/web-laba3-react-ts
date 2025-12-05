@@ -32,7 +32,7 @@ export default function Dogs() {
 
       setImage(data.message);
       setLoadedMessage(true);
-    } catch (e) {
+    } catch {
       setError("Ошибка загрузки. Пожалуйста, проверьте подключение к интернету.");
     } finally {
       setLoading(false);
@@ -40,55 +40,60 @@ export default function Dogs() {
   }
 
   return (
+    <div className="page-container">
       <div className="dogs-container">
-        <h1>🐶 Случайная собака</h1>
+
+              <h1>
+                  <span className="dog-emoji">🐶</span>
+                  <span className="dog-title"> Случайная собака</span>
+              </h1>
         <p className="subtitle">Нажмите на кнопку ниже, чтобы увидеть милого пса!</p>
 
         <div className={`dogs-result ${image || loading || error ? "show" : ""}`}>
           {loading && (
-              <div className="dogs-loading">
-                <div className="loading-spinner"></div>
-                <p>Ищем самого симпатичного пса...</p>
-              </div>
+            <div className="dogs-loading">
+              <div className="loading-spinner"></div>
+              <p>Ищем самого симпатичного пса...</p>
+            </div>
           )}
 
           {error && (
-              <div className="dogs-error">
-                <p>{error}</p>
-              </div>
+            <div className="dogs-error">
+              <p>{error}</p>
+            </div>
           )}
 
           {image && !loading && (
-              <>
-                <div className="dog-image-container">
-                  <img
-                      src={image}
-                      alt="Случайная собака"
-                      loading="lazy"
-                      onLoad={() => console.log("Изображение загружено")}
-                  />
+            <>
+              <div className="dog-image-container">
+                <img
+                  src={image}
+                  alt="Случайная собака"
+                  loading="lazy"
+                />
+              </div>
+
+              {loadedMessage && (
+                <div className="dogs-success">
+                  Случайная собака загружена!
                 </div>
-                {loadedMessage && (
-                    <div className="dogs-success">
-                      Случайная собака загружена!
-                    </div>
-                )}
-              </>
+              )}
+            </>
           )}
 
           {!image && !loading && !error && (
-              <div className="dogs-empty">
-                <div className="empty-icon">🐕</div>
-                <p>Здесь появится случайная собака</p>
-                <p className="small-text">Нажмите на кнопку, чтобы начать</p>
-              </div>
+            <div className="dogs-empty">
+              <div className="empty-icon">🐕</div>
+              <p>Здесь появится случайная собака</p>
+              <p className="small-text">Нажмите на кнопку, чтобы начать</p>
+            </div>
           )}
         </div>
 
         <button
-            className={`dogs-btn ${loading ? "loading" : ""}`}
-            onClick={loadDog}
-            disabled={loading}
+          className={`dogs-btn ${loading ? "loading" : ""}`}
+          onClick={loadDog}
+          disabled={loading}
         >
           {loading ? "Загрузка..." : "🎲 Показать случайную собаку"}
         </button>
@@ -97,15 +102,17 @@ export default function Dogs() {
           <p className="info-text">
             ⓘ Все изображения предоставлены{" "}
             <a
-                href="https://dog.ceo/dog-api/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="link"
+              href="https://dog.ceo/dog-api/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="link"
             >
               Dog API
             </a>
           </p>
         </div>
+
       </div>
+    </div>
   );
 }

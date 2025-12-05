@@ -3,30 +3,44 @@ import { Link } from "react-router-dom";
 import "../styles/style.css"; 
 import "../styles/main.css";
 
-interface SectionButtonProps {
+interface SectionCardProps {
   emoji: string;
-  label: string;
+  title: string;
+  subtitle: string;
   link: string;
 }
 
-const SectionButton: React.FC<SectionButtonProps> = ({ emoji, label, link }) => {
+const SectionCard: React.FC<SectionCardProps> = ({ emoji, title, subtitle, link }) => {
   return (
-    <Link to={link} className="section-button"> 
-      <span className="emoji">{emoji}</span>
-      <span className="label">{label}</span>
-    </Link>
+    <div className="card">
+      <span className="icon">{emoji}</span>
+      <h2>{title}</h2>
+      <p>{subtitle}</p>
+      <Link to={link} className="btn">Открыть</Link>
+    </div>
   );
 };
 
 export default function Main() {
   return (
     <div className="home-container">
-      <h1>Главная страница</h1>
-      <div className="buttons-wrapper">
-        <SectionButton emoji="🌤️" label="Погода" link="/weather" />
-        <SectionButton emoji="💰" label="Конвертер" link="/crypto" />
-        <SectionButton emoji="🐶" label="Собаки" link="/dogs" />
-        <SectionButton emoji="📰" label="Новости" link="/new" />
+      <header>
+        <h1>Добро пожаловать! 🌐</h1>
+        <p className="subtitle">Исследуй открытые API через наше приложение</p>
+      </header>
+
+      <div className="cards">
+        <SectionCard emoji="🌤️" title="Погода" subtitle="Узнай текущую погоду в любом городе мира" link="/weather" />
+        <SectionCard emoji="🐶" title="Случайная собака" subtitle="Посмотри на милую собаку" link="/dogs" />
+        <SectionCard emoji="💱" title="Крипто-конвертер" subtitle="Следи за курсом криптовалют" link="/crypto" />
+        <SectionCard emoji="🌌" title="Новости про космос" subtitle="Узнай лучшие новости про космос" link="/new" />
+      </div>
+
+      <div className="credits-marquee">
+        <div className="credits-content">
+          Проект выполнили: Муслин Артемий, Шабаркина Дарья, Языкова Мария, Яшина
+          Нина
+        </div>
       </div>
     </div>
   );
