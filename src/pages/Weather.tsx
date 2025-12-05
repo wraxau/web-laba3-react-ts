@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/style.css";
+//import "../styles/style.css";
 import "../styles/weather.css";
 
 interface GeoData {
