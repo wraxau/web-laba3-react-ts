@@ -39,13 +39,40 @@
   }
   
   @media (max-width: 480px) {
-    .cards {
-      grid-template-columns: 1fr;
-    }
-    .home-container{
-      grid-template-columns: 1fr;
-    }
+  .cards {
+    grid-template-columns: 1fr;
   }
+  .home-container{
+    grid-template-columns: 1fr;
+  }
+  .news-card{
+    grid-template-columns: 1fr;
+  }
+  .nav {
+    gap: 16px; 
+    flex-wrap: wrap; 
+    justify-content: center;
+  }
+
+  .buttons-wrapper {
+    gap: 12px;
+  }
+
+  .section-button {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 2.2em; 
+  }
+
+  #app {
+    padding: 1.5rem 1rem; 
+  }
+}
+
+
   
   .card {
     background: white;
