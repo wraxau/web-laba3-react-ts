@@ -1,3 +1,8 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
 :root {
     font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -214,4 +219,11 @@ button:focus-visible {
     min-height: 100vh;
     padding: 40px 16px;
     box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+    .nav {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
 }

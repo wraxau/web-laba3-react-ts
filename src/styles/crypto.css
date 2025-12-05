@@ -168,3 +168,18 @@ a.btn:hover {
 .crypto-header .nav a:hover {
     color: #2ecc71;
 }
+
+@media (max-width: 480px) {
+    .crypto-page {
+        padding: 40px 12px 20px;
+    }
+
+    .converter-form input,
+    .converter-form select {
+        font-size: 1rem;
+    }
+
+    .input-group {
+        flex-direction: column;
+    }
+}

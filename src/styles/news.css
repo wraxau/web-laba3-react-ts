@@ -129,3 +129,13 @@
 .homeButton:hover {
     background: rgb(207, 231, 252);
 }
+
+@media (max-width: 480px) {
+    .new-form {
+        flex-direction: column;
+    }
+
+    .new-form button {
+        width: 100%;
+    }
+}

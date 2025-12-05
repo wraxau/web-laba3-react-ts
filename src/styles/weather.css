@@ -156,3 +156,14 @@
     background: #ff3b50;
     transform: translateY(-2px);
 }
+
+@media (max-width: 480px) {
+    .search-form {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
