@@ -39,21 +39,21 @@
   }
   
   @media (max-width: 480px) {
-  .cards {
-    grid-template-columns: 1fr;
+    .cards {
+      grid-template-columns: 1fr;
+    }
+    .buttons-wrapper{
+      grid-template-columns: 1fr;
+    }
+    .news-card{
+      grid-template-columns: 1fr;
+    }
+    .nav {
+      gap: 10px; 
+      flex-wrap: wrap; 
+      justify-content: center;
+    }
   }
-  .buttons-wrapper{
-    grid-template-columns: 1fr;
-  }
-  .news-card{
-    grid-template-columns: 1fr;
-  }
-  .nav {
-    gap: 10px; 
-    flex-wrap: wrap; 
-    justify-content: center;
-  }
-}
 
 
   
