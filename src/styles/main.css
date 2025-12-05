@@ -42,6 +42,9 @@
     .cards {
       grid-template-columns: 1fr;
     }
+    .buttons-wrapper{
+      grid-template-columns: 1fr;
+    }
   }
   
   .card {
