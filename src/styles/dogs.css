@@ -1,61 +1,272 @@
-.result-container {
-    background: white;
-    border-radius: 16px;
-    padding: 28px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    max-width: 600px;
-    width: 100%;
-    display: none;
-    margin-top: 24px; 
+/* Dogs Component Styles */
+.dogs-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+.dogs-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #1a1a1a;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dogs-container p {
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Button Styles */
+.dogs-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+  margin-bottom: 32px;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.dogs-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.3);
+}
+
+.dogs-btn:active {
+  transform: translateY(0);
+}
+
+.dogs-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.dogs-btn.loading {
+  background: linear-gradient(135deg, #a8a8a8 0%, #7a7a7a 100%);
+}
+
+/* Result Block */
+.dogs-result {
+  background: linear-gradient(145deg, #ffffff, #f8f9fa);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow:
+          0 10px 40px rgba(0, 0, 0, 0.08),
+          0 2px 15px rgba(0, 0, 0, 0.03);
+  margin-bottom: 32px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.dogs-result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.dogs-result.show {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+/* Loading Animation */
+.dogs-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.dogs-loading p {
+  color: #667eea;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* Dog Image Container */
+.dog-image-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 24px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease;
+}
+
+.dog-image-container:hover {
+  transform: scale(1.01);
+}
+
+.dog-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Success Message */
+.dogs-success {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  box-shadow: 0 4px 15px rgba(72, 187, 120, 0.2);
+  animation: slideUp 0.3s ease;
+}
+
+.dogs-success::before {
+  content: '✓';
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Error Message */
+.dogs-error {
+  background: linear-gradient(135deg, #f56565, #e53e3e);
+  color: white;
+  padding: 16px 24px;
+  border-radius: 16px;
+  font-weight: 600;
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(245, 101, 101, 0.2);
+  animation: shake 0.5s ease;
+}
+
+/* Empty State */
+.dogs-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  color: #a0aec0;
+  font-size: 1.1rem;
+}
+
+.dogs-empty .empty-icon {
+  font-size: 4rem;
+  opacity: 0.3;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .result-container.show {
-    display: block;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .result-container img {
-    margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dogs-container {
+    padding: 24px 16px;
   }
 
-  button.btn, 
-  .action-buttons .btn {
-    font-family: inherit; 
-    font-size: 16px;
-    padding: 12px 22px;
+  .dogs-container h1 {
+    font-size: 2rem;
+    margin-bottom: 24px;
   }
-  
-  .action-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 24px;
-    justify-content: center;
-    flex-wrap: wrap;
+
+  .dogs-result {
+    padding: 24px;
+    min-height: 250px;
   }
-  
-  @media (max-width: 600px) {
-    .result-container {
-      padding: 20px;
-    }
-  
-    button.btn, 
-    .action-buttons .btn {
-      width: 100%;
-      text-align: center;
-      padding: 14px;
-      font-size: 16px;
-    }
-  
-    .action-buttons {
-      flex-direction: column;
-      gap: 10px;
-    }
-  
-    header h1 {
-      font-size: 24px;
-    }
-  
-    .subtitle {
-      font-size: 14px;
-    }
+
+  .dogs-btn {
+    padding: 14px 28px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 300px;
   }
-  
+
+  .dog-image-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dogs-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .dogs-result {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .dogs-success,
+  .dogs-error {
+    padding: 12px 20px;
+    font-size: 0.95rem;
+  }
+}
